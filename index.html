@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WasteXchange – Buy / Sell / Exchange Recyclable Waste</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <h1>♻️ WasteXchange</h1>
+        <p>Buy • Sell • Exchange Recyclable Waste</p>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#listings">Listings</a>
+        <a href="#add">Add Listing</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Turn Waste into Value</h2>
+      <p>
+        Connect with buyers and sellers of recyclable materials like plastic, paper, metal, e‑waste, and more.
+      </p>
+      <a href="#add" class="btn">Post Your Waste</a>
+      <a href="#listings" class="btn btn-outline">Browse Listings</a>
+    </div>
+  </section>
+
+  <!-- Search & Filters -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by material, city, or description..."
+          class="search-input"
+        />
+        <select id="categoryFilter" class="filter-select">
+          <option value="">All Categories</option>
+          <option value="Plastic">Plastic</option>
+          <option value="Paper">Paper</option>
+          <option value="Metal">Metal</option>
+          <option value="Glass">Glass</option>
+          <option value="E-Waste">E-Waste</option>
+          <option value="Textile">Textile</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="typeFilter" class="filter-select">
+          <option value="">All Types</option>
+          <option value="Sell">Sell</option>
+          <option value="Buy">Buy</option>
+          <option value="Exchange">Exchange</option>
+        </select>
+        <button id="applyFilters" class="btn">Apply Filters</button>
+        <button id="clearFilters" class="btn btn-outline">Clear</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section id="listings" class="listings-section">
+    <div class="container">
+      <h2>Current Listings</h2>
+      <div id="listingsGrid" class="listings-grid">
+        <!-- Listings will be injected here by JS -->
+      </div>
+      <p id="noListingsMsg" class="no-data" style="display:none;">
+        No listings found. Try adjusting filters or add a new listing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Add Listing Form -->
+  <section id="add" class="add-section">
+    <div class="container">
+      <h2>Add New Listing</h2>
+      <form id="addListingForm" class="add-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">Title *</label>
+            <input type="text" id="title" required placeholder="e.g., 50 kg HDPE Plastic Waste" />
+          </div>
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" required>
+              <option value="">Select Category</option>
+              <option value="Plastic">Plastic</option>
+              <option value="Paper">Paper</option>
+              <option value="Metal">Metal</option>
+              <option value="Glass">Glass</option>
+              <option value="E-Waste">E-Waste</option>
+              <option value="Textile">Textile</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="listingType">Listing Type *</label>
+            <select id="listingType" required>
+              <option value="">Select Type</option>
+              <option value="Sell">Sell</option>
+              <option value="Buy">Buy</option>
+              <option value="Exchange">Exchange</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" placeholder="e.g., 50 kg, 200 sheets" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City / Location *</label>
+            <input type="text" id="city" required placeholder="e.g., Kolhapur, Pune" />
+          </div>
+          <div class="form-group">
+            <label for="price">Expected Price / Value (optional)</label>
+            <input type="text" id="price" placeholder="e.g., ₹20/kg or 'Exchange for'" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" rows="4" required placeholder="Describe the waste material, condition, pickup details, etc."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Your Name *</label>
+            <input type="text" id="contactName" required placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone / WhatsApp *</label>
+            <input type="text" id="contactPhone" required placeholder="e.g., 9876543210" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contactEmail">Email (optional)</label>
+          <input type="email" id="contactEmail" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Post Listing</button>
+          <button type="reset" class="btn btn-outline">Reset</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About WasteXchange</h2>
+      <p>
+        WasteXchange is a simple platform to connect people and businesses who want to buy, sell, or exchange recyclable waste materials.
+        It helps reduce landfill waste and promotes a circular economy.
+      </p>
+      <ul>
+        <li>Post your recyclable waste for sale or exchange.</li>
+        <li>Browse listings by category, location, and type.</li>
+        <li>Contact sellers directly via phone, WhatsApp, or email.</li>
+      </ul>
+      <p class="note">
+        Note: This demo version stores data only in your browser (local storage). For a real deployment, connect this frontend to a backend and database.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 WasteXchange. Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
